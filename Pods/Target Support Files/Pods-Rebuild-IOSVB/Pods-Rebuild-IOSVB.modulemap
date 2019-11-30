@@ -1,0 +1,6 @@
+framework module Pods_Rebuild_IOSVB {
+  umbrella header "Pods-Rebuild-IOSVB-umbrella.h"
+
+  export *
+  module * { export * }
+}
