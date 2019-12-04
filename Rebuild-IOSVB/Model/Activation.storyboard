@@ -249,7 +249,11 @@
                         <viewLayoutGuide key="safeArea" id="0d8-2A-RAr"/>
                     </view>
                     <navigationItem key="navigationItem" id="ImK-Gy-B0d">
-                        <barButtonItem key="leftBarButtonItem" image="icons8-menu-100" id="bIh-Zk-qkW"/>
+                        <barButtonItem key="leftBarButtonItem" image="icons8-menu-100" id="bIh-Zk-qkW">
+                            <connections>
+                                <action selector="didTapMenu:" destination="r7v-PL-G3b" id="8LH-gj-jTe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1000"/>
                 </viewController>

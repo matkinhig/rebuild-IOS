@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		2200DBB0238E532100CEF83E /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200DBAF238E532100CEF83E /* PasswordViewController.swift */; };
 		2200DBB2238E710800CEF83E /* MethodLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200DBB1238E710800CEF83E /* MethodLoginViewController.swift */; };
+		2209E244239640A800A87BB8 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2209E243239640A800A87BB8 /* CardModel.swift */; };
 		22456186239119430058C928 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22456185239119430058C928 /* CustomView.swift */; };
 		2245618823911A140058C928 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245618723911A140058C928 /* CustomButton.swift */; };
 		2245618A23912CAB0058C928 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2245618923912CAB0058C928 /* Home.storyboard */; };
 		2245618D23912D090058C928 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245618C23912D090058C928 /* DashboardViewController.swift */; };
 		2245619123921AD60058C928 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245619023921AD60058C928 /* MenuTableViewController.swift */; };
+		2245619423949F3F0058C928 /* SlideTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245619323949F3F0058C928 /* SlideTransition.swift */; };
+		224561982394B8670058C928 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224561972394B8670058C928 /* HeaderTableViewCell.swift */; };
+		2245619A2394B8790058C928 /* BodyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224561992394B8790058C928 /* BodyTableViewCell.swift */; };
+		2245619C2394B8820058C928 /* FooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245619B2394B8820058C928 /* FooterTableViewCell.swift */; };
 		2257D9FB2390BA8200E85BA4 /* FirstMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2257D9FA2390BA8200E85BA4 /* FirstMapCell.swift */; };
 		2257D9FD2390BA9C00E85BA4 /* FirstCurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2257D9FC2390BA9C00E85BA4 /* FirstCurrencyCell.swift */; };
 		2257D9FF2390CB4800E85BA4 /* PinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2257D9FE2390CB4800E85BA4 /* PinViewController.swift */; };
@@ -36,11 +41,16 @@
 /* Begin PBXFileReference section */
 		2200DBAF238E532100CEF83E /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		2200DBB1238E710800CEF83E /* MethodLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodLoginViewController.swift; sourceTree = "<group>"; };
+		2209E243239640A800A87BB8 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		22456185239119430058C928 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		2245618723911A140058C928 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		2245618923912CAB0058C928 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		2245618C23912D090058C928 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		2245619023921AD60058C928 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		2245619323949F3F0058C928 /* SlideTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SlideTransition.swift; path = Pods/SlideTransition.swift; sourceTree = SOURCE_ROOT; };
+		224561972394B8670058C928 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		224561992394B8790058C928 /* BodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTableViewCell.swift; sourceTree = "<group>"; };
+		2245619B2394B8820058C928 /* FooterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterTableViewCell.swift; sourceTree = "<group>"; };
 		2257D9FA2390BA8200E85BA4 /* FirstMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMapCell.swift; sourceTree = "<group>"; };
 		2257D9FC2390BA9C00E85BA4 /* FirstCurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCurrencyCell.swift; sourceTree = "<group>"; };
 		2257D9FE2390CB4800E85BA4 /* PinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinViewController.swift; sourceTree = "<group>"; };
@@ -88,10 +98,40 @@
 		2245618B23912CED0058C928 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				224561962394B8340058C928 /* Table Cell */,
 				2245618C23912D090058C928 /* DashboardViewController.swift */,
 				2245619023921AD60058C928 /* MenuTableViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		2245619223949E370058C928 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				2245619323949F3F0058C928 /* SlideTransition.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		224561952394A4BE0058C928 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				22B3AA6A238B89E0005C2D79 /* Main.storyboard */,
+				22B3AA81238B91A9005C2D79 /* Activation.storyboard */,
+				2245618923912CAB0058C928 /* Home.storyboard */,
+			);
+			name = Storyboard;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		224561962394B8340058C928 /* Table Cell */ = {
+			isa = PBXGroup;
+			children = (
+				224561972394B8670058C928 /* HeaderTableViewCell.swift */,
+				224561992394B8790058C928 /* BodyTableViewCell.swift */,
+				2245619B2394B8820058C928 /* FooterTableViewCell.swift */,
+			);
+			path = "Table Cell";
 			sourceTree = "<group>";
 		};
 		2257D9F92390B9C800E85BA4 /* Table Cell */ = {
@@ -135,12 +175,11 @@
 			isa = PBXGroup;
 			children = (
 				22B3AA7F238B8C33005C2D79 /* SupportFile */,
+				2245619223949E370058C928 /* Animation */,
 				22B3AA7D238B8BC5005C2D79 /* Controller */,
 				22B3AA7C238B8BB9005C2D79 /* View */,
+				224561952394A4BE0058C928 /* Storyboard */,
 				22B3AA7A238B8BA6005C2D79 /* Model */,
-				22B3AA6A238B89E0005C2D79 /* Main.storyboard */,
-				22B3AA81238B91A9005C2D79 /* Activation.storyboard */,
-				2245618923912CAB0058C928 /* Home.storyboard */,
 				22B3AA6D238B89E0005C2D79 /* Assets.xcassets */,
 			);
 			path = "Rebuild-IOSVB";
@@ -149,6 +188,7 @@
 		22B3AA7A238B8BA6005C2D79 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2209E243239640A800A87BB8 /* CardModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -333,18 +373,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				2257D9FF2390CB4800E85BA4 /* PinViewController.swift in Sources */,
+				2209E244239640A800A87BB8 /* CardModel.swift in Sources */,
 				22B3AA69238B89E0005C2D79 /* ViewController.swift in Sources */,
+				224561982394B8670058C928 /* HeaderTableViewCell.swift in Sources */,
 				2257D9FD2390BA9C00E85BA4 /* FirstCurrencyCell.swift in Sources */,
 				22456186239119430058C928 /* CustomView.swift in Sources */,
 				2257DA012390CB5900E85BA4 /* PatternViewController.swift in Sources */,
 				2257DA042390F07000E85BA4 /* Storyboard.swift in Sources */,
+				2245619A2394B8790058C928 /* BodyTableViewCell.swift in Sources */,
 				22B3AA65238B89E0005C2D79 /* AppDelegate.swift in Sources */,
 				2257EEE5238E22D100DD7E1B /* LoginIDViewController.swift in Sources */,
 				22B3AA67238B89E0005C2D79 /* SceneDelegate.swift in Sources */,
 				22B3AA84238BAA90005C2D79 /* FirstViewController.swift in Sources */,
+				2245619423949F3F0058C928 /* SlideTransition.swift in Sources */,
 				2200DBB0238E532100CEF83E /* PasswordViewController.swift in Sources */,
 				2245619123921AD60058C928 /* MenuTableViewController.swift in Sources */,
 				22E66981238F6454006DD06E /* SlideView.swift in Sources */,
+				2245619C2394B8820058C928 /* FooterTableViewCell.swift in Sources */,
 				2200DBB2238E710800CEF83E /* MethodLoginViewController.swift in Sources */,
 				2257D9FB2390BA8200E85BA4 /* FirstMapCell.swift in Sources */,
 				2245618823911A140058C928 /* CustomButton.swift in Sources */,

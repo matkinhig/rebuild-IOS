@@ -8,6 +8,14 @@
 
 import UIKit
 
+enum MenuType {
+    case home
+    case account
+    case card
+    case bill
+    case transaction
+}
+
 class MenuTableViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -18,6 +26,18 @@ class MenuTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        dismiss(animated: true, completion: nil)
     }
 
 }

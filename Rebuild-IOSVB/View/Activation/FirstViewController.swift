@@ -14,6 +14,9 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    let transition = SlideTransition()
+    var heightScreen = UIScreen.main.bounds.height
+    
     let locationManager = CLLocationManager()
     let regionMeter : Double = 10000
     override func viewDidLoad() {
@@ -29,16 +32,24 @@ class FirstViewController: UIViewController {
         let titleImageView = UIImageView(image: #imageLiteral(resourceName: "header_logo-default"))
         self.navigationItem.titleView = titleImageView
         
-//        let menuLeft = UIButton(type: .system)
-//        menuLeft.setImage(#imageLiteral(resourceName: "reveal-icon"), for: .normal)
-//        menuLeft.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
-//        menuLeft.contentMode = .scaleAspectFit
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuLeft)
+        //        let menuLeft = UIButton(type: .system)
+        //        menuLeft.setImage(#imageLiteral(resourceName: "reveal-icon"), for: .normal)
+        //        menuLeft.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        //        menuLeft.contentMode = .scaleAspectFit
+        //        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuLeft)
     }    
+    @IBAction func didTapMenu(_ sender: UIBarButtonItem) {
+        let menuView = STORYBOARD_HOME.instantiateViewController(withIdentifier: "MenuTableViewController") as! MenuTableViewController
+        menuView.modalPresentationStyle = .overCurrentContext
+        menuView.transitioningDelegate = self
+        
+        //        self.present(menuView)
+        present(menuView, animated: true)
+    }
 }
 
 
-extension FirstViewController : UITableViewDelegate , UITableViewDataSource {
+extension FirstViewController : UITableViewDelegate , UITableViewDataSource, UIViewControllerTransitioningDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -63,6 +74,15 @@ extension FirstViewController : UITableViewDelegate , UITableViewDataSource {
             return self.view.frame.height * 0.5
         }
         else { return 180 }
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.isPresenting = false
+        return transition
+    }
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.isPresenting = true
+        return transition
     }
     
     

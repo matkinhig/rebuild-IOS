@@ -8,8 +8,13 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController {
 
+
+class DashboardViewController: UIViewController {
+    
+    let transition = SlideTransition()
+    var heightScreen = UIScreen.main.bounds.height
+    
     @IBOutlet weak var btnMenu: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,21 +24,72 @@ class DashboardViewController: UIViewController {
     }
     
     private func setupNavigationBarItem(){
-        print(123)
         let titleImageView = UIImageView(image: #imageLiteral(resourceName: "header_logo-default"))
         self.navigationItem.titleView = titleImageView
-        
-//        let menuLeft = UIButton(type: .system)
-//        menuLeft.setImage(#imageLiteral(resourceName: "reveal-icon"), for: .normal)
-//        menuLeft.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
-//        menuLeft.contentMode = .scaleAspectFit
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuLeft)
     }
     @IBAction func didTapMenu(_ sender: UIBarButtonItem) {
-        let menuView = STORYBOARD_ACTIVATION.instantiateViewController(withIdentifier: "MenuTableViewController") as! MenuTableViewController
-        self.present(menuView, animated: true, completion: nil)
-        
+        let menuView = STORYBOARD_HOME.instantiateViewController(withIdentifier: "MenuTableViewController") as! MenuTableViewController
+        menuView.modalPresentationStyle = .overCurrentContext
+        menuView.transitioningDelegate = self
+        present(menuView, animated: true)
     }
     
+    
+}
 
+extension DashboardViewController : UIViewControllerTransitioningDelegate , UITableViewDelegate , UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell : UITableViewCell = UITableViewCell(style: .subtitle, reuseIdentifier: "CellHeader")
+        switch section {
+        case 0:
+            cell.textLabel?.text = "Card"
+            break
+        case 1:
+            cell.textLabel?.text = "Account"
+            break
+        case 2:
+            cell.textLabel?.text = "Send Money"
+            break
+        default:
+            break
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return 3
+        case 1:
+            return 3
+        case 2:
+            return 3
+        default:
+            return 1
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BodyTableViewCell", for: indexPath) as! BodyTableViewCell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.isPresenting = false
+        return transition
+    }
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.isPresenting = true
+        return transition
+    }
+    
+    
 }
