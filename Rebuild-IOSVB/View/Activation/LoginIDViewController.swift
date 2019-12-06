@@ -54,5 +54,8 @@ class LoginIDViewController: UIViewController,UITextFieldDelegate {
         let count = textFieldText.count - substringToReplace.count + string.count
         return count <= 30
     }
-
+    @IBAction func didTapNext(_ sender: UIButton) {
+        
+    }
+    
 }

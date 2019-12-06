@@ -270,7 +270,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="activation_login_image-default" translatesAutoresizingMaskIntoConstraints="NO" id="ByV-JG-Iex">
-                                <rect key="frame" x="0.0" y="44" width="375" height="229"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="aJQ-19-IVd"/>
                                 </constraints>
@@ -315,11 +315,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LxX-zb-dZK" kind="show" id="KGi-Wc-VsO"/>
+                                    <action selector="didTapNext:" destination="FwQ-HD-odM" eventType="touchUpInside" id="xyJ-bC-U8d"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wcx-ct-mEL">
-                                <rect key="frame" x="10" y="283" width="355" height="40"/>
+                                <rect key="frame" x="10" y="214" width="355" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Login ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4qM-iR-9FJ">
                                         <rect key="frame" x="10" y="0.0" width="295" height="40"/>
@@ -740,7 +740,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="activation_login_image-default" translatesAutoresizingMaskIntoConstraints="NO" id="4QY-qL-zyw">
-                                <rect key="frame" x="0.0" y="44" width="375" height="229"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="Y8Z-1r-qJi"/>
                                 </constraints>
@@ -760,12 +760,12 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tnh-Ua-Zkp">
-                                <rect key="frame" x="10" y="283" width="355" height="40"/>
+                                <rect key="frame" x="10" y="214" width="355" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="OTP Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8UO-7p-6u0">
                                         <rect key="frame" x="10" y="0.0" width="295" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconfinder_icons_password_1564520" translatesAutoresizingMaskIntoConstraints="NO" id="ISz-nr-pZD">
                                         <rect key="frame" x="330" y="12.5" width="15" height="15"/>
@@ -872,9 +872,9 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="2lq-Gc-eSy"/>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="cTm-Qs-mTi">
-                                <rect key="frame" x="157.5" y="437" width="60" height="40"/>
+                                <rect key="frame" x="157.5" y="612" width="60" height="10"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="7Kp-gG-eBf"/>
+                                    <constraint firstAttribute="height" constant="10" id="7Kp-gG-eBf"/>
                                     <constraint firstAttribute="width" constant="60" id="u0V-W5-2HN"/>
                                 </constraints>
                             </pageControl>
@@ -884,7 +884,7 @@
                             <constraint firstItem="b5y-VO-lw2" firstAttribute="trailing" secondItem="XF6-xg-bM3" secondAttribute="trailing" id="0ta-DJ-UQt"/>
                             <constraint firstItem="b5y-VO-lw2" firstAttribute="leading" secondItem="XF6-xg-bM3" secondAttribute="leading" id="3pK-eY-vbw"/>
                             <constraint firstItem="cTm-Qs-mTi" firstAttribute="centerX" secondItem="T7s-Rl-Hdw" secondAttribute="centerX" id="JL5-VU-1TH"/>
-                            <constraint firstItem="XF6-xg-bM3" firstAttribute="top" secondItem="cTm-Qs-mTi" secondAttribute="bottom" constant="150" id="Jbc-pf-Hox"/>
+                            <constraint firstItem="XF6-xg-bM3" firstAttribute="top" secondItem="cTm-Qs-mTi" secondAttribute="bottom" constant="5" id="Jbc-pf-Hox"/>
                             <constraint firstItem="b5y-VO-lw2" firstAttribute="top" secondItem="6ZV-8S-gpQ" secondAttribute="top" id="SXt-3H-DI8"/>
                             <constraint firstItem="6ZV-8S-gpQ" firstAttribute="bottom" secondItem="XF6-xg-bM3" secondAttribute="bottom" id="efu-SA-iKQ"/>
                             <constraint firstItem="XF6-xg-bM3" firstAttribute="leading" secondItem="6ZV-8S-gpQ" secondAttribute="leading" id="jgk-KP-6z2"/>

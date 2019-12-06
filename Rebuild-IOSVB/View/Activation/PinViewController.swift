@@ -78,33 +78,44 @@ class PinViewController: UIViewController, UITextFieldDelegate {
         
     }
     @IBAction func changePage(_ sender: Any) {
-        if !isConfirm {
-            lbEnterPin.text = "Confirm your pin"
-            isConfirm = true
+        if inputText.count < 5 {
             lbPin.text = ""
             entryPoint = ""
-        }
-        else {
-            if inputText == confirmText {
-                print("giong nhau")
-                let homeView = STORYBOARD_HOME.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
-                let navController = UINavigationController(rootViewController: homeView)
-                navController.modalPresentationStyle = .fullScreen
-                self.navigationController?.present(navController, animated: true, completion: nil)
-            }
-            else {
-                lbEnterPin.text = "Enter pin"
-                isConfirm = false
-                inputText = ""
-                confirmText = ""
+            inputText = ""
+            let alertController = UIAlertController(title: "Cảnh báo", message: "Độ dài của pin phải đủ 6 kí tự", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Xác nhận", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+            print("nhap lai")
+        } else {
+            if !isConfirm {
+                lbEnterPin.text = "Confirm your pin"
+                isConfirm = true
                 lbPin.text = ""
                 entryPoint = ""
-                let alertController = UIAlertController(title: "Cảnh báo", message: "Xác nhận pin không giống vui lòng nhập lại", preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "Xác nhận", style: UIAlertAction.Style.default, handler: nil))
-                self.present(alertController, animated: true, completion: nil)
-                print("nhap lai")
+            }
+            else {
+                if inputText == confirmText {
+                    print("giong nhau")
+                    let homeView = STORYBOARD_HOME.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
+                    let navController = UINavigationController(rootViewController: homeView)
+                    navController.modalPresentationStyle = .fullScreen
+                    self.navigationController?.present(navController, animated: true, completion: nil)
+                }
+                else {
+                    lbEnterPin.text = "Enter pin"
+                    isConfirm = false
+                    inputText = ""
+                    confirmText = ""
+                    lbPin.text = ""
+                    entryPoint = ""
+                    let alertController = UIAlertController(title: "Cảnh báo", message: "Xác nhận pin không giống vui lòng nhập lại", preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "Xác nhận", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alertController, animated: true, completion: nil)
+                    print("nhap lai")
+                }
             }
         }
+        
     }
     
 }
