@@ -1,16 +1,17 @@
 //
-//  HeaderTableViewCell.swift
+//  MainMenuCell.swift
 //  Rebuild-IOSVB
 //
-//  Created by Mắt Kính IG on 12/2/19.
+//  Created by Mắt Kính IG on 12/7/19.
 //  Copyright © 2019 Mắt Kính IG. All rights reserved.
 //
 
 import UIKit
 
-class HeaderTableViewCell: UITableViewCell {
+class MainMenuCell: UITableViewCell {
 
-    @IBOutlet weak var lbTitle: UILabel!
+    @IBOutlet weak var lb: UILabel!
+    @IBOutlet weak var img: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

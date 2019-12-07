@@ -21,12 +21,12 @@ class SlideTransition: NSObject, UIViewControllerAnimatedTransitioning {
             let fromVC = transitionContext.viewController(forKey: .from) else { return }
         
         let viewContainer = transitionContext.containerView
-        let finalWidth = toVC.view.bounds.width * 0.6
-        let finalHeight = spView?.heightScreen
+        let finalWidth = toVC.view.bounds.width
+        let finalHeight = toVC.view.bounds.height
         if isPresenting {
             //set menu view controller to container
             viewContainer.addSubview(toVC.view)
-            toVC.view.frame = CGRect(x: -finalWidth, y: 0, width: finalWidth, height: finalHeight ?? toVC.view.bounds.height)
+            toVC.view.frame = CGRect(x: -finalWidth, y: 0, width: finalWidth, height: finalHeight)
         }
         
         //animate on screen

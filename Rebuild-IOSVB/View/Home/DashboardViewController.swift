@@ -28,8 +28,8 @@ class DashboardViewController: UIViewController {
         self.navigationItem.titleView = titleImageView
     }
     @IBAction func didTapMenu(_ sender: UIBarButtonItem) {
-        let menuView = STORYBOARD_HOME.instantiateViewController(withIdentifier: "MenuTableViewController") as! MenuTableViewController
-        menuView.modalPresentationStyle = .overCurrentContext
+        let menuView = STORYBOARD_HOME.instantiateViewController(withIdentifier: "MainMenuViewController") as! MainMenuViewController
+        menuView.modalPresentationStyle = .overFullScreen
         menuView.transitioningDelegate = self
         present(menuView, animated: true)
     }
@@ -39,6 +39,10 @@ class DashboardViewController: UIViewController {
 
 extension DashboardViewController : UIViewControllerTransitioningDelegate , UITableViewDelegate , UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 3
     }
     
