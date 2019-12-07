@@ -55,7 +55,13 @@ class LoginIDViewController: UIViewController,UITextFieldDelegate {
         return count <= 30
     }
     @IBAction func didTapNext(_ sender: UIButton) {
-        
+        if textField.text!.count > 10 {
+            let nextView = STORYBOARD_ACTIVATION.instantiateViewController(withIdentifier: "PasswordViewController")
+            let navController = UINavigationController(rootViewController: nextView)
+            navController.modalPresentationStyle = .fullScreen
+            self.navigationController?.present(navController, animated: true, completion: nil)
+            print(123)
+        }
     }
     
 }

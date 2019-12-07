@@ -71,9 +71,9 @@ extension FirstViewController : UITableViewDelegate , UITableViewDataSource, UIV
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return self.view.frame.height * 0.5
+            return self.view.frame.height
         }
-        else { return 180 }
+        else { return 169 }
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {

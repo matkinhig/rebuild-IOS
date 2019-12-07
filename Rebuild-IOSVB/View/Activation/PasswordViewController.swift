@@ -57,4 +57,12 @@ class PasswordViewController: UIViewController, UITextFieldDelegate {
         return count <= 6
     }
 
+    @IBAction func didTapNext(_ sender: UIButton) {
+        if textField.text!.count > 5 {
+            let nextView = STORYBOARD_ACTIVATION.instantiateViewController(withIdentifier: "MethodLoginViewController")
+                         let navController = UINavigationController(rootViewController: nextView)
+                         navController.modalPresentationStyle = .fullScreen
+                         self.navigationController?.present(navController, animated: true, completion: nil)
+        }
+    }
 }
